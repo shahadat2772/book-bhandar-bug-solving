@@ -104,7 +104,9 @@ const createCard = (book) => {
       <button onclick="addToWishlist('${
         book.id
       }')" class="button"><i class="fa-solid fa-heart"></i></button>
-      <button onclick="AddToCart" class="button">Add To Cart</button>
+      <button onclick="addToCart('${
+        book.id
+      }')" class="button">Add To Cart</button>
     </div>
   </div>
   <div class="info-container">
@@ -132,6 +134,7 @@ const addToWishlist = (id) => {
 };
 
 const displayCart = () => {
+  clearById("cart");
   const cart = getCartItems();
   console.log(cart);
 
