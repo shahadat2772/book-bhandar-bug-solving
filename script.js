@@ -142,6 +142,7 @@ const displayCart = () => {
 };
 
 const displayWishlist = () => {
+  clearById("wishlist");
   const wishlist = getWishlistItems();
   console.log(wishlist);
 
@@ -149,4 +150,9 @@ const displayWishlist = () => {
     const div = createCard(book);
     document.getElementById("wishlist").appendChild(div);
   });
+};
+
+// CLEAR TEXT CONTENT BY ID
+const clearById = (id) => {
+  document.getElementById(id).textContent = "";
 };
