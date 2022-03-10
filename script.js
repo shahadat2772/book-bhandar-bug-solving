@@ -101,14 +101,16 @@ const createCard = (book) => {
       alt=""
     />
     <div class="button-container">
-      <button onclick="addToWishlist('${book.id}')" class="button"><i class="fa-solid fa-heart"></i></button>
+      <button onclick="addToWishlist('${
+        book.id
+      }')" class="button"><i class="fa-solid fa-heart"></i></button>
       <button onclick="AddToCart" class="button">Add To Cart</button>
     </div>
   </div>
   <div class="info-container">
     <h1>${book.name}</h1>
     <p>
-      ${overview}
+      ${overview.length <= 50 ? overview : overview.slice(0, 60) + "..."}
     </p>
   </div>
 
